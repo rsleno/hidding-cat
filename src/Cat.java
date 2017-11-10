@@ -2,9 +2,12 @@ import java.util.Random;
 
 public class Cat {
 	private int box;
-	private final int[] array = {1, 2, 3, 4, 5};
+	private int[] array;
 	
-	public Cat() {
+	public Cat(int boxes) {
+		array = new int[boxes];
+		for (int i=0; i<boxes; i++)
+			array[i]=i+1;
 		int startBox = this.start();
 		this.setBox(startBox);
 	}
@@ -38,7 +41,10 @@ public class Cat {
 	
 	public void setBox(int box) {
 		this.box = box;
-		System.out.println("The cat is in box: " + box);
+	}
+	
+	public int[] getArray() {
+		return array;
 	}
 	
 }
